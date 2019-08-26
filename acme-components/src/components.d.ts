@@ -9,7 +9,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
+  interface HelloWorld {
     /**
     * The first name
     */
@@ -28,18 +28,18 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLHelloWorldElement extends Components.HelloWorld, HTMLStencilElement {}
+  var HTMLHelloWorldElement: {
+    prototype: HTMLHelloWorldElement;
+    new (): HTMLHelloWorldElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'hello-world': HTMLHelloWorldElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
+  interface HelloWorld extends JSXBase.HTMLAttributes<HTMLHelloWorldElement> {
     /**
     * The first name
     */
@@ -55,7 +55,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'hello-world': HelloWorld;
   }
 }
 
