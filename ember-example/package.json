@@ -49,5 +49,8 @@
   },
   "engines": {
     "node": "8.* || >= 10.*"
+  },
+  "dependencies": {
+    "acme-components": "0.0.1"
   }
 }
