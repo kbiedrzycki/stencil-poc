@@ -1,3 +1,28 @@
+$color-caribbean-green: #13DA93;
+
 :host {
-  display: block;
+  box-sizing: border-box;
+}
+
+:host([disabled]) {
+  pointer-events: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  color: white;
+  background-color: $color-caribbean-green;
+
+  &:hover {
+    background-color: darken($color-caribbean-green, 5%);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
 }
