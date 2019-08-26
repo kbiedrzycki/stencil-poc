@@ -1,4 +1,4 @@
-import { CounterBox } from './counter-box';
+import { CounterBox } from './component';
 
 describe('counter-box', () => {
   it('builds', () => {

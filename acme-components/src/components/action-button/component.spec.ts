@@ -1,4 +1,4 @@
-import { ActionButton } from './action-button';
+import { ActionButton } from './component';
 
 describe('action-button', () => {
   it('builds', () => {
