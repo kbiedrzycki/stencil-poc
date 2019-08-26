@@ -9,18 +9,12 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface ActionButton {
+    'disabled': boolean;
+  }
   interface HelloWorld {
-    /**
-    * The first name
-    */
     'first': string;
-    /**
-    * The last name
-    */
     'last': string;
-    /**
-    * The middle name
-    */
     'middle': string;
   }
 }
@@ -28,33 +22,35 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLActionButtonElement extends Components.ActionButton, HTMLStencilElement {}
+  var HTMLActionButtonElement: {
+    prototype: HTMLActionButtonElement;
+    new (): HTMLActionButtonElement;
+  };
+
   interface HTMLHelloWorldElement extends Components.HelloWorld, HTMLStencilElement {}
   var HTMLHelloWorldElement: {
     prototype: HTMLHelloWorldElement;
     new (): HTMLHelloWorldElement;
   };
   interface HTMLElementTagNameMap {
+    'action-button': HTMLActionButtonElement;
     'hello-world': HTMLHelloWorldElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface ActionButton extends JSXBase.HTMLAttributes<HTMLActionButtonElement> {
+    'disabled'?: boolean;
+  }
   interface HelloWorld extends JSXBase.HTMLAttributes<HTMLHelloWorldElement> {
-    /**
-    * The first name
-    */
     'first'?: string;
-    /**
-    * The last name
-    */
     'last'?: string;
-    /**
-    * The middle name
-    */
     'middle'?: string;
   }
 
   interface IntrinsicElements {
+    'action-button': ActionButton;
     'hello-world': HelloWorld;
   }
 }
