@@ -12,6 +12,11 @@ export namespace Components {
   interface ActionButton {
     'disabled': boolean;
   }
+  interface CounterBox {
+    'max': number;
+    'min': number;
+    'start': number;
+  }
   interface HelloWorld {
     'first': string;
     'last': string;
@@ -28,6 +33,12 @@ declare global {
     new (): HTMLActionButtonElement;
   };
 
+  interface HTMLCounterBoxElement extends Components.CounterBox, HTMLStencilElement {}
+  var HTMLCounterBoxElement: {
+    prototype: HTMLCounterBoxElement;
+    new (): HTMLCounterBoxElement;
+  };
+
   interface HTMLHelloWorldElement extends Components.HelloWorld, HTMLStencilElement {}
   var HTMLHelloWorldElement: {
     prototype: HTMLHelloWorldElement;
@@ -35,6 +46,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'action-button': HTMLActionButtonElement;
+    'counter-box': HTMLCounterBoxElement;
     'hello-world': HTMLHelloWorldElement;
   }
 }
@@ -42,6 +54,11 @@ declare global {
 declare namespace LocalJSX {
   interface ActionButton extends JSXBase.HTMLAttributes<HTMLActionButtonElement> {
     'disabled'?: boolean;
+  }
+  interface CounterBox extends JSXBase.HTMLAttributes<HTMLCounterBoxElement> {
+    'max'?: number;
+    'min'?: number;
+    'start'?: number;
   }
   interface HelloWorld extends JSXBase.HTMLAttributes<HTMLHelloWorldElement> {
     'first'?: string;
@@ -51,6 +68,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'action-button': ActionButton;
+    'counter-box': CounterBox;
     'hello-world': HelloWorld;
   }
 }
