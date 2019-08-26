@@ -3,23 +3,12 @@ import { format } from '../../utils/utils';
 
 @Component({
   tag: 'hello-world',
-  styleUrl: 'hello-world.scss',
-  shadow: true
+  styleUrl: 'styles.scss',
+  shadow: true,
 })
 export class HelloWorld {
-  /**
-   * The first name
-   */
   @Prop() first: string;
-
-  /**
-   * The middle name
-   */
   @Prop() middle: string;
-
-  /**
-   * The last name
-   */
   @Prop() last: string;
 
   private getText(): string {
