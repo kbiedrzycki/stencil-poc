@@ -1,5 +1,17 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
 {{outlet}}
+
+<h3>Stencil <em>counter-box</em></h3>
+<counter-box max={{max}} start={{start}} min={{min}} />
+
+<h3>Stencil <em>action-button</em></h3>
+<action-button onClick={{action "handleClick"}}>
+  {{#if showHello}}
+    Bye!
+  {{else}}
+    Hello!
+  {{/if}}
+</action-button>
+
+{{#if showHello}}
+  <hello-world first="React" middle="&" last="Stencil" />
+{{/if}}
