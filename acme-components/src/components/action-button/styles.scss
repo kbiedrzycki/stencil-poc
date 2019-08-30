@@ -1,5 +1,3 @@
-$color-caribbean-green: #13DA93;
-
 :host {
   box-sizing: border-box;
 }
@@ -16,10 +14,10 @@ button {
   padding: 4px 12px;
   border-radius: 3px;
   color: white;
-  background-color: $color-caribbean-green;
+  background-color: var(--color-caribbean-green);
 
   &:hover {
-    background-color: darken($color-caribbean-green, 5%);
+    opacity: 0.8;
   }
 
   &:disabled {
